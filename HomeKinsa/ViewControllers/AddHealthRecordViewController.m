@@ -208,14 +208,15 @@
 {
     NSString *imageName = [NSString stringWithFormat:@"%@", note.userInfo[@"imageName"]];
     if ([imageName isEqualToString:[NSString stringWithFormat:@"%d",((int)self.uploadImageList.count-2)]]) {
-        if ([HttpTool isConnectInternet]) {
-            /**
-             *  2015-12-07 SoulJa
-             *  图片上传
-             */
-//            [DataBaseTool refreshDefaultMemberDiary:nil];
-            [DataBaseTool deleteDefaultMemberDiary];
-        }
+//        if ([HttpTool isConnectInternet]) {
+//            /**
+//             *  2015-12-07 SoulJa
+//             *  图片上传
+//             */
+////            [DataBaseTool refreshDefaultMemberDiary:nil];
+//            [DataBaseTool deleteDefaultMemberDiary];
+//        }
+        [DataBaseTool deleteDefaultMemberDiary];
 
         UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];

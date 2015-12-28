@@ -83,51 +83,36 @@
     [[GlobalTool shared] setFromCheckToBackground:NO];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    /*
-//    NSString *host = [GetServerUrlViewController getServerUrl];
-//    NSString *urlStr = [NSString stringWithFormat:@"http://%@/api.php?m=open&c=ads&a=display",host];
-//    NSURL *url = [NSURL URLWithString:urlStr];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-//    if ([dict[@"status"] isEqual:[NSNumber numberWithInt:1]]) {
-//        AdViewController *adVc = [[AdViewController alloc] init];
-//        NSDictionary *responseDict = dict[@"data"];
-//        adVc.adImageUrlStr = responseDict[@"url"];
-//        self.window.rootViewController = adVc;
+
+//    //判断当前是否有网络
+//    BOOL isConnectInternet = [HttpTool isConnectInternet];
+//    if (isConnectInternet) {
+//        //查看是否拥有广告位图片
+//        NSDictionary *adDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"ad"];
+//        if (adDict == nil) { //第一次打开时
+//            [HttpTool getAdDict];
+//            UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
+//            self.window.rootViewController = vc;
+//        } else { //往后打开
+//            if ([[adDict objectForKey:@"status"] isEqual:@1]) {
+//                AdViewController *adVc = [[AdViewController alloc] init];
+//                adVc.adImageUrlStr = [[adDict objectForKey:@"data"] objectForKey:@"img"];
+//                self.window.rootViewController = adVc;
+//            } else {
+//                [HttpTool getAdDict];
+//                UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
+//                self.window.rootViewController = vc;
+//            }
+//        }
 //    } else {
 //        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        UIViewController *rootVc = [board instantiateInitialViewController];
-//        self.window.rootViewController = rootVc;
+//        UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
+//        self.window.rootViewController = vc;
 //    }
-     */
-    //判断当前是否有网络
-    BOOL isConnectInternet = [HttpTool isConnectInternet];
-    if (isConnectInternet) {
-        //查看是否拥有广告位图片
-        NSDictionary *adDict = [[NSUserDefaults standardUserDefaults] objectForKey:@"ad"];
-        if (adDict == nil) { //第一次打开时
-            [HttpTool getAdDict];
-            UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
-            self.window.rootViewController = vc;
-        } else { //往后打开
-            if ([[adDict objectForKey:@"status"] isEqual:@1]) {
-                AdViewController *adVc = [[AdViewController alloc] init];
-                adVc.adImageUrlStr = [[adDict objectForKey:@"data"] objectForKey:@"img"];
-                self.window.rootViewController = adVc;
-            } else {
-                [HttpTool getAdDict];
-                UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
-                self.window.rootViewController = vc;
-            }
-        }
-    } else {
-        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *vc = [board instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
-        self.window.rootViewController = vc;
-    }
+    AdViewController *adVc = [[AdViewController alloc] init];
+    self.window.rootViewController = adVc;
     
     return YES;
 }

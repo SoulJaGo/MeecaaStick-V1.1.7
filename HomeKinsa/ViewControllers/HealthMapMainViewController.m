@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [HttpTool getCurrentNetworkStatus];
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;

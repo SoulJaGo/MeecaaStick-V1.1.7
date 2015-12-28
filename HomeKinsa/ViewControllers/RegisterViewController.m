@@ -26,10 +26,7 @@
 @implementation RegisterViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    //监测网络状态
-    [HttpTool getCurrentNetworkStatus];
-    
+    [super viewDidLoad];    
     /**
      *  2015-11-28 SoulJa
      *  加入键盘监听事件

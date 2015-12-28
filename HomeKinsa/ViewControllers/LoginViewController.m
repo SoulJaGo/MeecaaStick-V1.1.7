@@ -82,8 +82,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //监测网络状态
-    [HttpTool getCurrentNetworkStatus];
     
     /**
      * 2015-11-28 SoulJa
@@ -216,8 +214,6 @@
     }
     //生成HUB
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
-    //判断网络状态
-    [HttpTool getCurrentNetworkStatus];
     
     [HttpTool LoginWithPhoneNumber:self.inputPhoneNum.text Password:self.inputPwd.text];
 }
@@ -257,8 +253,6 @@
     
     //生成HUB
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
-    //判断网络状态
-    [HttpTool getCurrentNetworkStatus];
     id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES allowCallback:YES authViewStyle:SSAuthViewStyleFullScreenPopup viewDelegate:nil authManagerViewDelegate:nil];
     [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
         if (error) {
@@ -282,8 +276,6 @@
     
     //生成HUB
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
-    //判断网络状态
-    [HttpTool getCurrentNetworkStatus];
     [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
         if (result) {
             [HttpTool loginThirdPartyWithOpenId:[userInfo uid] NickName:[userInfo nickname] PlatForm:@"1" Avatar:[userInfo profileImage]];

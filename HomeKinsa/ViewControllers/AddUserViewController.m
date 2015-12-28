@@ -71,9 +71,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //监测当前网络状态
-    [HttpTool getCurrentNetworkStatus];
-    
     /**
      *  2015-11-28 SoulJa
      *  添加textfield代理

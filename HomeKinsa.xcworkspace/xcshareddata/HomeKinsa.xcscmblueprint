@@ -1,7 +1,7 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B969787FEFD024666B8DC157DDF7BB1C7E351A28+++106E179",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : {
+    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : {
 
     },
     "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++E31F08A" : {
@@ -13,24 +13,26 @@
     "2825B021E69DC2B01B5E60B597471BD632A38F88+++6A39DFD" : {
 
     },
-    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : {
+    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : 0,
+    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : 0,
     "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++E31F08A" : 0,
     "36a93739-3b2d-41c3-82fe-915338ec1388++5640+++EA9FBCE" : 0,
     "2825B021E69DC2B01B5E60B597471BD632A38F88+++6A39DFD" : 0,
-    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : 0
+    "B969787FEFD024666B8DC157DDF7BB1C7E351A28+++106E179" : 0,
+    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F43EA136-538C-4FCF-9C4C-E1C04F7FF3CC",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : "..",
+    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : "..",
     "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++E31F08A" : "..",
     "36a93739-3b2d-41c3-82fe-915338ec1388++5640+++EA9FBCE" : "",
     "2825B021E69DC2B01B5E60B597471BD632A38F88+++6A39DFD" : "Meecaa_Stick\/",
-    "36a93739-3b2d-41c3-82fe-915338ec1388++5326+++1F9902F" : ".."
+    "B969787FEFD024666B8DC157DDF7BB1C7E351A28+++106E179" : "MeecaaStick1.1.7\/",
+    "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "HomeKinsa",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -60,6 +62,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/121.199.40.188",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36a93739-3b2d-41c3-82fe-915338ec1388++76+++F79A3DD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SoulJaGo\/MeecaaStick-V1.1.7.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B969787FEFD024666B8DC157DDF7BB1C7E351A28+++106E179"
     }
   ]
 }

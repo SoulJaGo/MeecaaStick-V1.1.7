@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AdViewController : UIViewController
-@property (nonatomic,copy) NSString *adImageUrlStr;
+//@property (nonatomic,copy) NSString *adImageUrlStr;
 @end

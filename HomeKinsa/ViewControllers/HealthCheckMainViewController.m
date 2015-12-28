@@ -127,13 +127,6 @@
 }
  */
 
-+ (void)initialize {
-    //监测网络状态
-    if (![HttpTool isConnectInternet]) {
-        [SVProgressHUD showErrorWithStatus:@"网络不给力哦!"];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //页面状态
@@ -150,9 +143,7 @@
             self.checkTip.hidden = NO;
             self.noHistoryTip.hidden = NO;
             //请求网络读取数据
-            if ([HttpTool isConnectInternet]) {
-                [HttpTool getDefaultMemberDiaryInfoByPage:1];
-            }
+            [HttpTool getDefaultMemberDiaryInfoByPage:1];
         } else { //数据库有数据的时候
             self.diaryList = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:1];
             self.historyTableView.hidden = NO;
@@ -253,29 +244,36 @@
  */
 - (void)loadMoreOldData {
     self.page++;
-    if ([HttpTool isConnectInternet]) {
-        NSMutableArray *array = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:self.page];
-        if (array == nil || array.count == 0) { //本地没有更多的数据了
-            [HttpTool getDefaultMemberDiaryInfoByPage:self.page];
-        } else { //本地有更多的数据
-            [self.diaryList addObjectsFromArray:array];
-            [self.historyTableView reloadData];
-            [self.historyTableView.footer endRefreshing];
-        }
-    } else {
-        NSMutableArray *array = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:self.page];
-        if (array != nil) {
-            [self.diaryList addObjectsFromArray:array];
-            [self.historyTableView reloadData];
-            [self.historyTableView.footer endRefreshing];
-        } else {
-            [self.historyTableView.footer endRefreshing];
-        }
-
-        [SVProgressHUD showErrorWithStatus:@"网络不给力哦!"];
-        
+//    if ([HttpTool isConnectInternet]) {
+//        NSMutableArray *array = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:self.page];
+//        if (array == nil || array.count == 0) { //本地没有更多的数据了
+//            [HttpTool getDefaultMemberDiaryInfoByPage:self.page];
+//        } else { //本地有更多的数据
+//            [self.diaryList addObjectsFromArray:array];
+//            [self.historyTableView reloadData];
+//            [self.historyTableView.footer endRefreshing];
+//        }
+//    } else {
+//        NSMutableArray *array = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:self.page];
+//        if (array != nil) {
+//            [self.diaryList addObjectsFromArray:array];
+//            [self.historyTableView reloadData];
+//            [self.historyTableView.footer endRefreshing];
+//        } else {
+//            [self.historyTableView.footer endRefreshing];
+//        }
+//
+//        [SVProgressHUD showErrorWithStatus:@"网络不给力哦!"];
+//        
+//    }
+    NSMutableArray *array = [[DataBaseTool shared] getDefaultMemberDiaryFromPage:self.page];
+    if (array == nil || array.count == 0) { //本地没有更多的数据了
+        [HttpTool getDefaultMemberDiaryInfoByPage:self.page];
+    } else { //本地有更多的数据
+        [self.diaryList addObjectsFromArray:array];
+        [self.historyTableView reloadData];
+        [self.historyTableView.footer endRefreshing];
     }
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations  {

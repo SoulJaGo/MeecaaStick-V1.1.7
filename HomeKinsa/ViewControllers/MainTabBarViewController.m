@@ -33,17 +33,11 @@
  */
 + (void)initialize
 {
-    //判断是否有网络
-    BOOL isConnectInternet = [HttpTool isConnectInternet];
-    if (isConnectInternet) { // 可以连接网络
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            //友盟统计
-            [MobClick event:@"startLogin"];
-            [HttpTool validLogin];
-        });
-    } else {
-        return;
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //友盟统计
+        [MobClick event:@"startLogin"];
+        [HttpTool validLogin];
+    });
 }
 
 
@@ -51,12 +45,6 @@
     
     
     [super viewDidLoad];
-    
-    //监测网络状态
-    if (![HttpTool isConnectInternet]) {
-        [SVProgressHUD showInfoWithStatus:@"请检测您的网络状态!"];
-    }
-    
     //添加头像按钮
     UIImageView *iconBtn = [[UIImageView alloc] init];
     if ([[GlobalTool deviceString] isEqualToString:@"iPhone 6P"] || [[GlobalTool deviceString] isEqualToString:@"iPhone 6SP"]) {
@@ -99,9 +87,7 @@
      *  2015-09-30 SoulJa
      *  监测更新
      */
-    if ([HttpTool isConnectInternet]) {
-        [HttpTool getVersion];
-    }
+    [HttpTool getVersion];
     
 }
 
@@ -129,25 +115,21 @@
 - (void)getVersionSuccessNotification:(NSNotification *)note
 {
     int NoNeedUpdate = [[[NSUserDefaults standardUserDefaults] objectForKey:@"NoNeedUpdate"] intValue];
-    if ([HttpTool isConnectInternet] && NoNeedUpdate==0) {
-        /* 2015-11-02 改为声明宏变量
-        NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-         */
+    if(NoNeedUpdate==0) {
         NSString *currentVersion = VERSION;
         NSDictionary *versionInfoDict = note.userInfo;
         if ([versionInfoDict[@"status"] isEqual:@0]) {
             return;
         } else {
-            if (![currentVersion isEqualToString:[NSString stringWithFormat:@"%@",versionInfoDict[@"version"]]]) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@",versionInfoDict[@"title"]] message:[NSString stringWithFormat:@"%@",versionInfoDict[@"message"]] delegate:self cancelButtonTitle:nil otherButtonTitles:@"前往更新",@"忽略此次更新", nil];
+            NSDictionary *versionData = [versionInfoDict objectForKey:@"data"];
+            if (![currentVersion isEqualToString:[NSString stringWithFormat:@"%@",versionData[@"version"]]]) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@",versionData[@"title"]] message:[NSString stringWithFormat:@"%@",versionData[@"message"]] delegate:self cancelButtonTitle:nil otherButtonTitles:@"前往更新",@"忽略此次更新", nil];
                 [alertView show];
             } else {
                 return;
             }
         }
         
-    } else {
-        return;
     }
 }
 
@@ -195,18 +177,7 @@
 //            [self.iconBtn setImage:[UIImage imageNamed:@"top_head_button"] forState:UIControlStateNormal];
             [self.iconBtn setImage:[UIImage imageNamed:@"top_head_button"]];
         } else { //有头像地址的时候
-            if ([HttpTool isConnectInternet]) {
-//                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[DataBaseTool getDefaultMember] objectForKey:@"avatar"]]];
-//                if (data == nil) {
-//                    [self.iconBtn setImage:[UIImage imageNamed:@"top_head_button"] forState:UIControlStateNormal];
-//                } else {
-//                    [self.iconBtn setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
-//                }
-                [self.iconBtn sd_setImageWithURL:[NSURL URLWithString:[[DataBaseTool getDefaultMember] objectForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"top_head_button"]];
-            } else {
-//                [self.iconBtn setImage:[UIImage imageNamed:@"top_head_button"] forState:UIControlStateNormal];
-                [self.iconBtn setImage:[UIImage imageNamed:@"top_head_button"]];
-            }
+            [self.iconBtn sd_setImageWithURL:[NSURL URLWithString:[[DataBaseTool getDefaultMember] objectForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"top_head_button"]];
             [self.iconBtn.layer setCornerRadius:22];
             [self.iconBtn.layer setMasksToBounds:YES];
             [self.iconBtn.layer setBorderColor:[UIColor whiteColor].CGColor];

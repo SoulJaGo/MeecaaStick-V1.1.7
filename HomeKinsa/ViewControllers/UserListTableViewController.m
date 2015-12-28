@@ -27,8 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //监测当前网络状态
-    [HttpTool getCurrentNetworkStatus];
     [self setupNav];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     

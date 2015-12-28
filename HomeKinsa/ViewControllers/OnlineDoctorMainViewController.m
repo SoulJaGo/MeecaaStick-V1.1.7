@@ -23,9 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //监测网络状态
-    [HttpTool getCurrentNetworkStatus];
-    
     //判断用户是否登录
     NSDictionary *defaultMember = [DataBaseTool getDefaultMember];
     if (defaultMember == nil) {
