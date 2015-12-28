@@ -1,0 +1,45 @@
+PODS:
+  - CRToast (0.0.7)
+  - HSDatePickerViewController (1.0.0)
+  - JJTabBarController (1.0.0)
+  - Motis (1.0.2)
+  - ReactiveCocoa (2.3.1):
+    - ReactiveCocoa/UI (= 2.3.1)
+  - ReactiveCocoa/Core (2.3.1):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.3.1)
+  - ReactiveCocoa/UI (2.3.1):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+  - SIAlertView (1.3)
+  - SSKeychain (1.2.2)
+  - SVProgressHUD (1.1.2)
+  - ZYQAssetPickerController (1.0.0)
+
+DEPENDENCIES:
+  - CRToast (~> 0.0.7)
+  - HSDatePickerViewController (~> 1.0)
+  - JJTabBarController (~> 1.0.0)
+  - Motis (~> 1.0.1)
+  - ReactiveCocoa (~> 2.3.1)
+  - SDWebImage (~> 3.6)
+  - SIAlertView
+  - SSKeychain
+  - SVProgressHUD
+  - ZYQAssetPickerController (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
+  HSDatePickerViewController: 3854fa84da85c6c5704ba727a8b579e22ed1f6e5
+  JJTabBarController: c031ad6dd78746fc172711dfdb731ada1802e2a9
+  Motis: d7520710ed453445ebfbcbe2cf7a681079aeed95
+  ReactiveCocoa: 334468a83b2c5f669f7cfb9a084415ee23219b4f
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
+  SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
+  SSKeychain: 88767e903ee8d274ed380e364d96b7a101235286
+  SVProgressHUD: 3afb875b9eb23acd1bed9b82495695c68621a8b2
+  ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
+
+COCOAPODS: 0.36.0.rc.1

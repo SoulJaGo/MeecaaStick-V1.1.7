@@ -1,0 +1,1 @@
+/Users/my_zgc/Desktop/mikai/HomeKinsa/Build/Intermediates/ArchiveIntermediates/HomeKinsa/InstallationBuildProductsLocation/Applications/HomeKinsa.app

@@ -1,0 +1,55 @@
+//
+//  HomeKinsa-prefix.pch
+//  HomeKinsa
+//
+//  Created by Zhang guangchun on 15/3/4.
+//  Copyright (c) 2015年 Mikai. All rights reserved.
+//
+
+#ifndef HomeKinsa_HomeKinsa_prefix_pch
+#define HomeKinsa_HomeKinsa_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "RACEXTScope.h"
+#import "ReactiveCocoa.h"
+#import "MobClick.h"
+#endif
+
+#define COLOR_NAV_BACKGROUND [UIColor colorWithRed:80/255.0 green:205/255.0 blue:216/255.0 alpha:1.0]
+#define SERVER_URL @"http://121.199.40.188/"
+
+
+//#define HOST @"http://121.199.40.188/"
+/*正式服务器地址*/
+//#define HOST @"http://api.meecaa.cn/"
+/*测试服务器地址*/
+#define HOST @"http://120.24.174.207/"
+//#define HOST @"http://121.199.40.188/"
+/*版本信息*/
+#define VERSION @"1.1.6"
+
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+#ifdef DEBUG
+#define TTLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define TTLog(format, ...)
+#endif
+#endif

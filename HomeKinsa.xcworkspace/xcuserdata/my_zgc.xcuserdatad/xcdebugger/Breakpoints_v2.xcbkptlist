@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeKinsa/ThirdLib/DBCamera/Controllers/DBCameraSegueViewController.m"
+            timestampString = "453328495.027068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-saveImage"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeKinsa/ThirdLib/DBCamera/Controllers/DBCameraSegueViewController.m"
+            timestampString = "453328565.76767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-cropImage"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DBCameraSegueViewController cropImage]"
+                  moduleName = "HomeKinsa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/my_zgc/Desktop/HomeKinsa/HomeKinsa/ThirdLib/DBCamera/Controllers/DBCameraSegueViewController.m"
+                  timestampString = "460393735.18325"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[DBCameraSegueViewController cropImage]_block_invoke"
+                  moduleName = "HomeKinsa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/my_zgc/Desktop/HomeKinsa/HomeKinsa/ThirdLib/DBCamera/Controllers/DBCameraSegueViewController.m"
+                  timestampString = "460393735.183592"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
